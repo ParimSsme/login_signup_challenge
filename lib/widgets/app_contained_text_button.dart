@@ -17,7 +17,7 @@ class AppContainedTextButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: 150,
+        width: 230,
         decoration: BoxDecoration(
           gradient: gradient,
           borderRadius: BorderRadius.circular(20.0),
