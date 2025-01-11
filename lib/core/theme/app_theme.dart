@@ -49,9 +49,11 @@ class AppTheme {
 
     /// Text Field Theme
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: AppColors.secondary),
+      border: UnderlineInputBorder(
+        borderSide: const BorderSide(color: Colors.grey),
+      ),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: const BorderSide(color: Colors.green),
       ),
     ),
   );
