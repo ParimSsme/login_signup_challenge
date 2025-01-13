@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:login_signup_challenge/controllers/auth_controller.dart';
 import 'package:login_signup_challenge/widgets/login_view.dart';
 import 'package:login_signup_challenge/widgets/sign_up_view.dart';
+import '../widgets/background_container.dart';
 import '../widgets/social_media_buttons.dart';
 
 class AuthScreen extends GetView<AuthController> {
@@ -16,18 +17,21 @@ class AuthScreen extends GetView<AuthController> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Stack(
-            children: [
-              NotificationListener<ScrollNotification>(
-                onNotification: (notification) {
-                  if (notification is ScrollUpdateNotification &&
-                      notification.depth == 0) {
-                    controller.selectedIndex.value = controller.pageController.page!;
-                  }
-                  return false;
-                },
+        child: Stack(
+          children: [
+
+            ...backgroundWidgets(size),
+
+            NotificationListener<ScrollNotification>(
+              onNotification: (notification) {
+                if (notification is ScrollUpdateNotification &&
+                    notification.depth == 0) {
+                  controller.selectedIndex.value = controller.pageController.page!;
+                }
+                return false;
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: PageView(
                   controller: controller.pageController,
                   scrollDirection: Axis.vertical,
@@ -40,10 +44,11 @@ class AuthScreen extends GetView<AuthController> {
                     SignUpView(),
                   ],
                 ),
-              ).animate().fade(),
-              ...generateSocialMediaButtons(size),
-            ],
-          ),
+              ),
+              /// 500 milliseconds delay for background widgets animations
+            ).animate().fade(delay: Duration(milliseconds: 500), duration: Duration(seconds: 1)),
+            ...generateSocialMediaButtons(size),
+          ],
         ),
       ),
     );
