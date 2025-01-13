@@ -26,7 +26,7 @@ List<Widget> backgroundWidgets(Size size) {
             ],
           ),
         ),
-      ).animate().scale(duration: Duration(milliseconds: 500)),
+      ).animate().slide(duration: Duration(milliseconds: 500)),
     ),
     Positioned(
       bottom: 0,
