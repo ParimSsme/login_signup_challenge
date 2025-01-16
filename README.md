@@ -1,16 +1,10 @@
-# login_signup_challenge
+### Pinterest Design
 
-A new Flutter project.
+A huge thanks to the designer for the beautiful design! You can view the design in Pinterest here:
 
-## Getting Started
+[View Figma Design](https://www.pinterest.com/pin/650066527483562809/)
 
-This project is a starting point for a Flutter application.
+This design was found publicly, and I appreciate the work that went into it. Thank you to the creator for sharing it!
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Preview
+![](https://github.com/ParimSsme/login_signup_challenge/blob/main/preview.gif)
