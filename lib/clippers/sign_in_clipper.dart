@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 class SignInClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    var path = new Path();
+    var path = Path();
     path.lineTo(0.0, size.height * 0.7);
     path.quadraticBezierTo(0.0, size.height * 0.7 + 14,  15, size.height* 0.7 + 20);
 
