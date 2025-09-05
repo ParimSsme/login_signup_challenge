@@ -12,44 +12,42 @@ class AuthScreen extends GetView<AuthController> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      body: SafeArea(
-        child: Stack(
-          children: [
+      body: Stack(
+        children: [
 
-            ...backgroundWidgets(size),
+          ...backgroundWidgets(size),
 
-            NotificationListener<ScrollNotification>(
-              onNotification: (notification) {
-                if (notification is ScrollUpdateNotification &&
-                    notification.depth == 0) {
-                  controller.selectedIndex.value = controller.pageController.page!;
-                }
-                return false;
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: PageView(
-                  controller: controller.pageController,
-                  scrollDirection: Axis.vertical,
-                  physics: const NeverScrollableScrollPhysics(),
-                  onPageChanged: (index) {
-                    controller.selectedIndex.value = index.toDouble();
-                  },
-                  children: [
-                    LoginView(),
-                    SignUpView(),
-                  ],
-                ),
+          NotificationListener<ScrollNotification>(
+            onNotification: (notification) {
+              if (notification is ScrollUpdateNotification &&
+                  notification.depth == 0) {
+                controller.selectedIndex.value = controller.pageController.page!;
+              }
+              return false;
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: PageView(
+                controller: controller.pageController,
+                scrollDirection: Axis.vertical,
+                physics: const NeverScrollableScrollPhysics(),
+                onPageChanged: (index) {
+                  controller.selectedIndex.value = index.toDouble();
+                },
+                children: [
+                  LoginView(),
+                  SignUpView(),
+                ],
               ),
-              /// 500 milliseconds delay for background widgets animations
-            ).animate().fade(delay: Duration(milliseconds: 500), duration: Duration(seconds: 1)),
-            ...generateSocialMediaButtons(size),
-          ],
-        ),
+            ),
+            /// 500 milliseconds delay for background widgets animations
+          ).animate().fade(delay: Duration(milliseconds: 500), duration: Duration(seconds: 1)),
+          ...generateSocialMediaButtons(size),
+        ],
       ),
     );
   }

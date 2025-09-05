@@ -19,7 +19,7 @@ class LoginView extends StatelessWidget {
           color: AppColors.card,
         ),
         child: Padding(
-          padding: EdgeInsets.only(top: 30, left: 25, right: 25, bottom: 40),
+          padding: EdgeInsets.only(top: 30, left: 25, right: 15, bottom: 25),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

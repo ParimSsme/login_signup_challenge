@@ -23,8 +23,8 @@ class SignUpView extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.only(
-            top: 30,
-            left: 25,
+            top: 25,
+            left: 15,
             right: 25,
             bottom: 40
           ),
